@@ -1,6 +1,6 @@
 // Recursive function
 const toFlat = arr => {
-  for (const el of arr) if (typeof el === 'object') {
+  for (const el of arr) if (Array.isArray(el)) {
     arr.splice(arr.indexOf(el), 1, ...el);
     toFlat(el);
   }
